@@ -1,0 +1,39 @@
+html {
+  background-color: rgb(129, 129, 185);
+}
+
+body {
+  margin: auto;
+  width: 33%;
+}
+
+#res {
+  margin-top: 80px;
+  height: 48px;
+  font-size: 20px;
+  background-color: lightgray;
+  border: 3px solid black;
+}
+
+button[id^=btn] {
+  width: 25%;
+  height: 36px;
+  font-size: 18px;
+  margin: 0px;
+  float: left;
+}
+
+#btn0, #btn1 {
+  background-color: lightgreen;
+  color: brown;
+}
+
+#btnClr, #btnEql {
+  background-color: darkgreen;
+  color: white;
+}
+
+#btnSum, #btnSub, #btnMul, #btnDiv {
+  background-color: black;
+  color: red;
+}
