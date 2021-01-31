@@ -4,6 +4,16 @@ const calculator = {
   operand1: "",
   operator: "",
   operand2: "",
+  buttons: {
+    "0": document.getElementById("btn0"),
+    "1": document.getElementById("btn1"),
+    "+": document.getElementById("btnSum"),
+    "-": document.getElementById("btnSub"),
+    "*": document.getElementById("btnMul"),
+    "/": document.getElementById("btnDiv"),
+    "=": document.getElementById("btnEql"),
+    "C": document.getElementById("btnClr")
+  },
   binary: (number) => parseInt((number >>> 0).toString(2)),
   decimal: (number) => parseInt(number, 2),
   existResult: function () {
@@ -93,40 +103,57 @@ const calculator = {
 
 // FUNCIONALIDAD PARA LOS BOTONES
 
-document.getElementById("btnClr").addEventListener("click", () => {
-  calculator.clear();
-});
-
-document.getElementById("btn0").addEventListener("click", () => {
+calculator.buttons["0"].addEventListener("click", () => {
   if (!calculator.existResult()) {
     calculator.inputZero();
   }
 });
 
-document.getElementById("btn1").addEventListener("click", () => {
+calculator.buttons["1"].addEventListener("click", () => {
   if (!calculator.existResult()) {
     calculator.inputOne();
   }
 });
 
-document.getElementById("btnSum").addEventListener("click", () => {
+calculator.buttons["+"].addEventListener("click", () => {
   calculator.setOperator("+");
 });
 
-document.getElementById("btnSub").addEventListener("click", () => {
+calculator.buttons["-"].addEventListener("click", () => {
   calculator.setOperator("-");
 });
 
-document.getElementById("btnMul").addEventListener("click", () => {
+calculator.buttons["*"].addEventListener("click", () => {
   calculator.setOperator("*");
 });
 
-document.getElementById("btnDiv").addEventListener("click", () => {
+calculator.buttons["/"].addEventListener("click", () => {
   calculator.setOperator("/");
 });
 
-document.getElementById("btnEql").addEventListener("click", () => {
+calculator.buttons["="].addEventListener("click", () => {
   if (calculator.validExpression()) {
     calculator.makeOperation();
   }
+});
+
+calculator.buttons["C"].addEventListener("click", () => {
+  calculator.clear();
+});
+
+
+// Deteccion de presionado de botones.
+
+document.body.addEventListener("keydown", function(event) {
+
+  let pressedKey = event.key.toUpperCase();
+
+  if (calculator.buttons.hasOwnProperty(pressedKey)) {
+    calculator.buttons[pressedKey].click();
+    calculator.buttons[pressedKey].classList.toggle("presion");
+    setTimeout(() => {
+      calculator.buttons[pressedKey].classList.toggle("presion");
+    }, 0);
+  }
+
 });

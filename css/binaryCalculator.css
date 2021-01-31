@@ -39,3 +39,7 @@ button[id^=btn] {
   background-color: black;
   color: red;
 }
+
+button:active, .presion {
+  background-color: royalblue !important;
+}
