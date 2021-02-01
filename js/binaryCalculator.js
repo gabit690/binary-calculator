@@ -14,7 +14,7 @@ const calculator = {
     "=": document.getElementById("btnEql"),
     "C": document.getElementById("btnClr")
   },
-  binary: (number) => parseInt((number >>> 0).toString(2)),
+  binary: (number) => (number >>> 0).toString(2),
   decimal: (number) => parseInt(number, 2),
   existResult: function () {
     return this.result;
