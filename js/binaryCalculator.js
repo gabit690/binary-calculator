@@ -149,7 +149,7 @@ document.body.addEventListener("keydown", function(event) {
   let pressedKey = event.key.toUpperCase();
 
   if (pressedKey == "ENTER") {
-    pressedKey = "C";
+    pressedKey = "=";
   }
 
   if (calculator.buttons.hasOwnProperty(pressedKey)) {
