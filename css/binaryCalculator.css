@@ -2,13 +2,23 @@ html {
   background-color: rgb(129, 129, 185);
 }
 
+h1, p {
+  font-size: 20px;
+  text-align: center;
+}
+
+p {
+  font-size: 15px;
+  color: white;
+}
+
 body {
   margin: auto;
   width: 33%;
 }
 
 #res {
-  margin-top: 80px;
+  margin-top: 20px;
   padding: 10px 0px 0px 10px;
   height: 48px;
   font-size: 20px;
